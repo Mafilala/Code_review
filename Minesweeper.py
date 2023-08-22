@@ -16,14 +16,14 @@ class Solution:
             if board[r][c] == 'M':
                 board[r][c] = 'X'
                 return
-            cnt = 0
+            count = 0
             visited.add((r, c))
             for row, col in directions:
                 if isbound(r + row, c + col):
                     if board[r + row][c + col] == 'M':
-                        cnt += 1
-            if cnt:
-                board[r][c] = str(cnt)
+                        count += 1
+            if count:
+                board[r][c] = str(count)
             else:
                 board[r][c] = 'B'
                 for row, col in directions:
@@ -32,4 +32,3 @@ class Solution:
         dfs(click[0], click[1])
 
         return board
-
